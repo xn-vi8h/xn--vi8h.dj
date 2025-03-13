@@ -43,7 +43,8 @@
             // 表示位置を再調整
             const textHeight = text.offsetHeight * scale;
             text.style.position = 'absolute';
-            text.style.top = `calc(50% - ${textHeight / 2}px)`;
+            // text.style.top = `calc(50% - ${textHeight / 2}px)`;
+            text.style.top = `calc(50%)`;
         }
         window.addEventListener("resize", resize);
         resize();
