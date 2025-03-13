@@ -1,1 +1,52 @@
-# 🍕.dj
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍕.dj</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CT68F08DL5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-CT68F08DL5');
+    </script>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            background-color: black; /* デフォルトの背景色を黒に設定 */
+        }
+        @media (prefers-color-scheme: light) {
+            body {
+                color: black;
+                background-color: white; /* ライトモードの背景色を白に設定 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <span id="text" style="font-size:10vw;white-space:nowrap;">🍕</span>
+    <script>
+        const text = document.getElementById("text");
+        function resize() {
+            const scale = window.innerWidth / text.offsetWidth;
+            text.style.transform = `scale(${scale})`;
+            // 表示位置を再調整
+            const textHeight = text.offsetHeight * scale;
+            text.style.position = 'absolute';
+            text.style.top = `calc(50% - ${textHeight / 2}px)`;
+        }
+        window.addEventListener("resize", resize);
+        resize();
+    </script>
+</body>
+</html>
